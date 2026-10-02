@@ -1,0 +1,29 @@
+# Local credentials and environments
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+# Datasets, models, and generated results
+kb/datasets/
+biobert/
+BERT/
+ClinicalBERT/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.whl
+*.log
+*.zip
+outputs/
+output/
+logs/
+saved_models/
+checkpoints/
+predictions/
+runs/
+*_augmented_data/
+augmented_data/

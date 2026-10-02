@@ -1,0 +1,14 @@
+augmentation_ratio: 0.3
+biobert_model: ./biobert
+llama_api:
+  model: llama-3.1-8B-instruct
+  token: ''
+  url: https://YOUR_LLM_ENDPOINT/v1/chat/completions
+low_frequency_threshold: 50
+mcmc_burn_in: 100
+mcmc_context_weight: 0.6
+mcmc_iterations: 1000
+output_path: ./bionlp13_llama_augmented_data
+test_data: ./kb/datasets/bionlp13/test.txt
+train_data: ./kb/datasets/bionlp13/train.txt
+val_data: ./kb/datasets/bionlp13/val.txt

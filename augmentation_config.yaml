@@ -1,0 +1,15 @@
+api_keys:
+  openai: ''
+augmentation_ratio: 0.3
+biobert_model: ./biobert
+generation_model: grok-3
+low_frequency_threshold: 5
+mirror_services:
+  openai:
+    base_url: https://YOUR_LLM_ENDPOINT/v1
+    default_model: grok-3
+output_path: ./augmented_data
+sampling_method: markov
+test_data: ./kb/datasets/bionlp11/test.txt
+train_data: ./kb/datasets/bionlp11/train.txt
+val_data: ./kb/datasets/bionlp11/val.txt

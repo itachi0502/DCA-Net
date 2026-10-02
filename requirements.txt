@@ -1,0 +1,12 @@
+# Minimal dependencies inferred from the included code, not a locked environment.
+# Install a CUDA-compatible PyTorch build separately when needed.
+torch>=1.13.1
+transformers==4.28.1
+numpy<2
+pandas
+scikit-learn
+PyYAML
+tqdm
+requests
+openai>=1
+anthropic
