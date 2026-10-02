@@ -1,0 +1,51 @@
+paths:
+  biobert_path: ./biobert
+  train_data: ./kb/datasets/bionlp11/train.txt
+  val_data: ./kb/datasets/bionlp11/val.txt
+  test_data: ./kb/datasets/bionlp11/test.txt
+  output_dir: ./outputs/bionlp11_dca_net
+  log_dir: ./logs/bionlp11/dca_net
+  model_save_dir: ./saved_models/bionlp11/dca_net
+  prediction_output: ./predictions/bionlp11/dca_net
+training:
+  device: cuda:0
+  batch_size: 64
+  eval_batch_size: 32
+  learning_rate: 2.0e-05
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  num_epochs: 20
+  warmup_proportion: 0.1
+  early_stopping_patience: 5
+  save_best_model: true
+  seed: 42
+model:
+  max_seq_length: 256
+  hidden_size: 768
+  dropout: 0.1
+  fix_bio_tags: true
+  loss_type: focal_loss
+  focal_loss:
+    alpha: 0.25
+    gamma: 2.0
+    reduction: mean
+    weight: 0.5
+  tae:
+    use_tae: true
+    num_heads: 8
+    hidden_size: 768
+    dropout: 0.1
+  transformer:
+    num_hidden_layers: 2
+    num_attention_heads: 8
+    hidden_size: 768
+    intermediate_size: 3072
+    hidden_dropout_prob: 0.1
+    attention_probs_dropout_prob: 0.1
+  crf:
+    use_crf: true
+logging:
+  level: INFO
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  to_file: true
+  to_console: true
